@@ -1,0 +1,14 @@
+[Unit]
+Description=Example BEAM application that uses watchdog
+Requires=network.target
+
+[Service]
+Environment=HOME=/home/hauleth
+Type=notify
+ExecStart=/opt/example/bin/plug_systemd_example start
+WatchdogSec=10s
+NotifyAccess=main
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

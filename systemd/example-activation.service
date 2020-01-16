@@ -1,0 +1,7 @@
+[Unit]
+Description=Example BEAM application that uses socket activation
+
+[Service]
+Environment=HOME=/home/hauleth
+Type=notify
+ExecStart=/opt/example/bin/plug_systemd_example start
