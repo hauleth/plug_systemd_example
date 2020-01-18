@@ -1,21 +1,26 @@
-watchdog: systemd
-	sudo systemctl enable example-watchdog.service
-	sudo systemctl start example-watchdog.service
+SYSTEMD_TARGET ?= /usr/local/lib/systemd/system
 
-socket: systemd
-	sudo systemctl enable example-activation.socket
-	sudo systemctl start example-activation.socket
+socket: install systemd
+	sudo systemctl start example.target
 
-systemd: release
+systemd:
 	@mkdir -p /usr/local/lib/systemd/system
 	sudo cp systemd/* /usr/local/lib/systemd/system
+	sudo chmod 644 /usr/local/lib/systemd/system/*
 	sudo systemctl daemon-reload
 	-sudo systemctl stop example-activation.socket
 	-sudo systemctl stop example-activation.service
-	-sudo systemctl stop example-watchdog.service
+	-sudo systemctl stop example-application.service
+	-sudo systemctl stop example-application.socket
+	-sudo systemctl stop example.target
+
 
 release:
 	MIX_ENV=prod mix do deps.get, release --overwrite
 
+install: release
+	sudo cp -r _build/prod/rel/plug_systemd_example /opt/example
+	sudo chown -R root:root /opt/example
+	sudo find /opt/example -executable -exec chmod +x '{}' +
 
 .PHONY: release systemd

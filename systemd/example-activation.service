@@ -1,7 +1,6 @@
 [Unit]
-Description=Example BEAM application that uses socket activation
+Description=Proxy service
+Requires=example-application.socket
 
 [Service]
-Environment=HOME=/home/hauleth
-Type=notify
-ExecStart=/opt/example/bin/plug_systemd_example start
+ExecStart=/lib/systemd/systemd-socket-proxyd /var/example-service

@@ -1,0 +1,8 @@
+[Unit]
+Description=Listening socket
+Requires=sockets.target
+
+[Socket]
+ListenStream=/var/example-service
+MaxConnections=16384
+ReusePort=true

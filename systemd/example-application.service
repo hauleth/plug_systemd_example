@@ -1,0 +1,13 @@
+[Unit]
+Description=Example BEAM application
+
+[Service]
+Environment=HOME=/var/opt/example
+WorkingDirectory=/var/opt/example
+User=www-data
+Group=www-data
+Type=notify
+ExecStart=/opt/example/bin/plug_systemd_example start
+WatchdogSec=10s
+NotifyAccess=main
+Restart=on-failure

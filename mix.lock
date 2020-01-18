@@ -6,5 +6,5 @@
   "plug_cowboy": {:hex, :plug_cowboy, "2.1.1", "a196e4f428d7f5d6dba5ded314cc55cd0fbddf1110af620f75c0190e77844b33", [:mix], [{:cowboy, "~> 2.5", [hex: :cowboy, repo: "hexpm", optional: false]}, {:plug, "~> 1.7", [hex: :plug, repo: "hexpm", optional: false]}], "hexpm"},
   "plug_crypto": {:hex, :plug_crypto, "1.0.0", "18e49317d3fa343f24620ed22795ec29d4a5e602d52d1513ccea0b07d8ea7d4d", [:mix], [], "hexpm"},
   "ranch": {:hex, :ranch, "1.7.1", "6b1fab51b49196860b733a49c07604465a47bdb78aa10c1c16a3d199f7f8c881", [:rebar3], [], "hexpm"},
-  "systemd": {:hex, :systemd, "0.3.1", "f09c410b4e269b7d66a9d3fa129d213a5993434623f78f3e2a8d428866506ba4", [:rebar3], [], "hexpm"},
+  "systemd": {:git, "https://github.com/hauleth/erlang-systemd.git", "b8f213af5a51a06ca41badbb01669b7c0e64cd08", []},
 }
