@@ -24,7 +24,7 @@ defmodule PlugSystemdExample.MixProject do
     [
       {:plug, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:systemd, "~> 0.2"}
+      {:systemd, "~> 0.3.0"}
     ]
   end
 end

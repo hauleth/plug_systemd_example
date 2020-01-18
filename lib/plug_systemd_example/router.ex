@@ -2,6 +2,7 @@ defmodule PlugSystemdExample.Router do
   use Plug.Router
 
   plug(:match)
+  plug(Plug.Logger)
   plug(:dispatch)
 
   get "/" do
