@@ -29,4 +29,10 @@ defmodule PlugSystemdExample.Router do
 
     send_resp(conn, 204, "")
   end
+
+  get "/slow" do
+    Process.sleep(5_000)
+
+    send_resp(conn, 200, "I am sloooooow\n")
+  end
 end

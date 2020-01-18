@@ -15,7 +15,8 @@ defmodule PlugSystemdExample.Application do
 
     children = [
       {Plug.Cowboy, cowboy_opts},
-      {Task, fn -> :systemd.notify(:ready) end}
+      {Task, fn -> :systemd.notify(:ready) end},
+      {Plug.Cowboy.Drainer, refs: :all}
     ]
 
     :ok = :logger.add_handlers(:systemd)
