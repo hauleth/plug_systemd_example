@@ -1,7 +1,7 @@
 # Plug systemd Example
 
-This is example of Plug+Cowboy application that integrates with systemd features
-like:
+This is example of Plug+Cowboy application that integrates with systemd via
+[systemd](https://github.com/hauleth/erlang-systemd) library features like:
 
 - Socket activation via some socket hopping due to
   [ERL-1138](https://bugs.erlang.org/browse/ERL-1138), however it listens on
