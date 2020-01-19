@@ -24,7 +24,7 @@ defmodule PlugSystemdExample.MixProject do
     [
       {:plug, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:systemd, github: "hauleth/erlang-systemd"}
+      {:systemd, "~> 0.3.3"}
     ]
   end
 end
