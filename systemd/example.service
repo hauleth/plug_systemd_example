@@ -11,3 +11,12 @@ ExecStart=/opt/example/bin/plug_systemd_example start
 WatchdogSec=10s
 NotifyAccess=main
 Restart=on-failure
+
+# Security options
+
+ProtectSystem=full
+ProtectHome=yes
+PrivateDevices=yes
+PrivateTmp=yes
+NoNewPrivileges=yes
+
