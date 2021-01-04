@@ -1,0 +1,12 @@
+[Service]
+ExecStart=/opt/example/erts-11.1.5/bin/epmd -d -systemd
+User=www-data
+Group=www-data
+Type=notify
+
+# Security options
+ProtectSystem=full
+ProtectHome=yes
+PrivateDevices=yes
+PrivateTmp=yes
+NoNewPrivileges=yes

@@ -9,12 +9,12 @@ defmodule PlugSystemdExample.Application do
 
   def start(_type, _args) do
     case :logger.add_handlers(:systemd) do
-      :ok -> :logger.remove_handler(:primary)
+      :ok ->
+        :logger.remove_handler(:default)
       _ -> :ok
     end
 
     fds = :systemd.listen_fds()
-    Logger.info(inspect(fds))
 
     cowboy_opts = [
       scheme: :http,
@@ -41,12 +41,11 @@ defmodule PlugSystemdExample.Application do
         fd when is_integer(fd) and fd > 0 -> fd
       end
 
-    {:ok, socket} = :ranch_tcp.listen([:inet6, fd: fd])
-
     [
       transport_options: [
-        socket: socket
-      ]
+        socket_opts: [:inet6, fd: fd]
+      ],
+      port: 0
     ]
   end
 end

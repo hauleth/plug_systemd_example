@@ -7,6 +7,6 @@
   "plug_cowboy": {:hex, :plug_cowboy, "2.4.1", "779ba386c0915027f22e14a48919a9545714f849505fa15af2631a0d298abf0f", [:mix], [{:cowboy, "~> 2.7", [hex: :cowboy, repo: "hexpm", optional: false]}, {:cowboy_telemetry, "~> 0.3", [hex: :cowboy_telemetry, repo: "hexpm", optional: false]}, {:plug, "~> 1.7", [hex: :plug, repo: "hexpm", optional: false]}, {:telemetry, "~> 0.4", [hex: :telemetry, repo: "hexpm", optional: false]}], "hexpm", "d72113b6dff7b37a7d9b2a5b68892808e3a9a752f2bf7e503240945385b70507"},
   "plug_crypto": {:hex, :plug_crypto, "1.2.0", "1cb20793aa63a6c619dd18bb33d7a3aa94818e5fd39ad357051a67f26dfa2df6", [:mix], [], "hexpm", "a48b538ae8bf381ffac344520755f3007cc10bd8e90b240af98ea29b69683fc2"},
   "ranch": {:hex, :ranch, "1.7.1", "6b1fab51b49196860b733a49c07604465a47bdb78aa10c1c16a3d199f7f8c881", [:rebar3], [], "hexpm", "451d8527787df716d99dc36162fca05934915db0b6141bbdac2ea8d3c7afc7d7"},
-  "systemd": {:hex, :systemd, "0.5.0", "9841449f3db2ea1d75b7ca8a41320102dc649c42b4ceb2fb86245a3e39560181", [:rebar3], [], "hexpm", "f3c79cdf68b611d045d38f4058aa7dbed21b4f981c12670efdcd7b3b0d4b2ea3"},
+  "systemd": {:hex, :systemd, "0.5.2", "0f63a03b86e3d63abe3a307d5d9119f40f34fb5de8e04447f15a0481250ed74d", [:rebar3], [], "hexpm", "23a3b207bcd339c3ef2cedf4aafd9de06751ee575e26d49cedc2884870452595"},
   "telemetry": {:hex, :telemetry, "0.4.2", "2808c992455e08d6177322f14d3bdb6b625fbcfd233a73505870d8738a2f4599", [:rebar3], [], "hexpm", "2d1419bd9dda6a206d7b5852179511722e2b18812310d304620c7bd92a13fcef"},
 }

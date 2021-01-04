@@ -4,7 +4,6 @@ Requires=sockets.target
 
 [Socket]
 ListenStream=80
-; ListenStream=/var/example-service
 BindIPv6Only=both
 MaxConnections=16384
 ReusePort=true

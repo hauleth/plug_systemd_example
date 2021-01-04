@@ -1,0 +1,7 @@
+[Unit]
+Requires=sockets.target
+
+[Socket]
+ListenStream=4369
+BindIPv6Only=both
+ReusePort=true

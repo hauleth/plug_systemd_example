@@ -1,8 +1,10 @@
 [Unit]
 Description=Example BEAM application
+Requires=example-epmd.socket
 
 [Service]
 Environment=HOME=/run/example
+Environment='ERL_FLAGS=-start_epmd false'
 Environment=ERL_CRASH_DUMP_SECONDS=0
 WorkingDirectory=/run/example
 RuntimeDirectory=example
@@ -13,10 +15,9 @@ Type=notify
 ExecStart=/opt/example/bin/plug_systemd_example start
 WatchdogSec=10s
 NotifyAccess=main
-Restart=never
+Restart=on-failure
 
 # Security options
-
 ProtectSystem=full
 ProtectHome=yes
 PrivateDevices=yes
