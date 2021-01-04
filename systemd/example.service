@@ -2,15 +2,18 @@
 Description=Example BEAM application
 
 [Service]
-Environment=HOME=/var/opt/example
-WorkingDirectory=/var/opt/example
+Environment=HOME=/run/example
+Environment=ERL_CRASH_DUMP_SECONDS=0
+WorkingDirectory=/run/example
+RuntimeDirectory=example
+RuntimeDirectoryPreserve=yes
 User=www-data
 Group=www-data
 Type=notify
 ExecStart=/opt/example/bin/plug_systemd_example start
 WatchdogSec=10s
 NotifyAccess=main
-Restart=on-failure
+Restart=never
 
 # Security options
 
@@ -19,4 +22,3 @@ ProtectHome=yes
 PrivateDevices=yes
 PrivateTmp=yes
 NoNewPrivileges=yes
-

@@ -8,9 +8,12 @@ defmodule PlugSystemdExample.Application do
   require Logger
 
   def start(_type, _args) do
-    :ok = :logger.add_handlers(:systemd)
+    case :logger.add_handlers(:systemd) do
+      :ok -> :logger.remove_handler(:primary)
+      _ -> :ok
+    end
 
-    fds = :systemd.listen_fds(false)
+    fds = :systemd.listen_fds()
     Logger.info(inspect(fds))
 
     cowboy_opts = [
@@ -20,7 +23,7 @@ defmodule PlugSystemdExample.Application do
 
     children = [
       {Plug.Cowboy, cowboy_opts},
-      {Task, fn -> :systemd.notify(:ready) end},
+      :systemd.ready(),
       {Plug.Cowboy.Drainer, refs: :all}
     ]
 
@@ -34,18 +37,16 @@ defmodule PlugSystemdExample.Application do
   defp socket_opts([socket | _]) do
     fd =
       case socket do
-        {fd, _name} -> fd
+        {fd, _name} when is_integer(fd) and fd > 0 -> fd
         fd when is_integer(fd) and fd > 0 -> fd
       end
 
-    {:ok, socket} = :gen_tcp.listen(0, [:binary, :local, fd: fd])
+    {:ok, socket} = :ranch_tcp.listen([:inet6, fd: fd])
 
     [
       transport_options: [
         socket: socket
-      ],
-      ip: :local,
-      port: 0
+      ]
     ]
   end
 end

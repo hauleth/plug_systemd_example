@@ -3,6 +3,9 @@ Description=Listening socket
 Requires=sockets.target
 
 [Socket]
-ListenStream=/var/example-service
+ListenStream=80
+; ListenStream=/var/example-service
+BindIPv6Only=both
 MaxConnections=16384
 ReusePort=true
+NoDelay=true

@@ -1,9 +1,0 @@
-[Unit]
-Description=Listening socket
-Requires=network.target
-
-[Socket]
-ListenStream=80
-BindIPv6Only=both
-MaxConnections=16384
-ReusePort=true

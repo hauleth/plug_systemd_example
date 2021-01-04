@@ -1,3 +1,3 @@
 [Unit]
 Description=Example BEAM application with socket activation
-Requires=example-activation.socket
+Requires=example.socket

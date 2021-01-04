@@ -1,6 +1,0 @@
-[Unit]
-Description=Proxy service
-Requires=example.socket
-
-[Service]
-ExecStart=/lib/systemd/systemd-socket-proxyd /var/example-service
