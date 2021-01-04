@@ -3,9 +3,8 @@
 This is example of Plug+Cowboy application that integrates with systemd via
 [systemd](https://github.com/hauleth/erlang-systemd) library features like:
 
-- Socket activation via some socket hopping due to
-  [ERL-1138](https://bugs.erlang.org/browse/ERL-1138), however it listens on
-  super-user port (80) while VM runs as unprivileged user `www-data`
+- Socket activation to listen on privileged port port (80) while VM running
+  as unprivileged user `www-data`
 - Journal logging, which allows for structured logging and multiline logs
 - Watchdog integration which allows for triggering restarts from within
   application
@@ -18,7 +17,8 @@ ASCIICinema recording of shutdown handling:
 
 ## Installation
 
-This project require Elixir 1.10+ for `logger` integration.
+This project require Elixir 1.10+ for `logger` integration and OTP 23+ for
+proper socket support
 
 1. Clone repo.
 2. Run `make` (you will need to enter `sudo` password for installation of
