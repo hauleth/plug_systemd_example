@@ -1,3 +1,7 @@
+This project was merged into [`systemd` library examples][1].
+
+---
+
 # Plug systemd Example
 
 This is example of Plug+Cowboy application that integrates with systemd via
@@ -32,3 +36,5 @@ proper socket support
 - `/hello` - respond with string `world`
 - `/stop` - trigger Watchdog
 - `/reload` - simulate application reload that last 10s
+
+[1]: https://github.com/hauleth/erlang-systemd/tree/master/examples/plug
